@@ -10,9 +10,8 @@ export const initPagination = ({pages, fromRow, toRow, totalRows}, createPage) =
     return (data, state, action) => {
         // @todo: #2.1 — посчитать количество страниц, объявить переменные и константы
 
-        const rowsPerPage = state.rowsPerPage;
-        const pageCount = Math.ceil(data.length / rowsPerPage);
-        let page = state.page;
+        const rowsPerPage = parseInt(state.rowsPerPage || 10);
+        const page = parseInt(state.page || 1);
 
 
         // @todo: #2.6 — обработать действия
